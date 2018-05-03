@@ -34,4 +34,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Gallery');
     }
+
+    /**
+     * Get the photos for the user.
+     */
+    public function photos()
+    {
+        return $this->hasMany('App\Photos');
+    }
 }
