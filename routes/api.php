@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('galleries', 'GalleryController@index');
+Route::get('galleries/{gallery}', 'GalleryController@show');
+Route::post('galleries', 'GalleryController@store');
+Route::put('galleries/{gallery}', 'GalleryController@update');
+Route::delete('galleries/{gallery}', 'GalleryController@delete');
