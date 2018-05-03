@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
 
+    protected $fillable = ['name', 'description'];
+
     /**
      * Get the user for the gallery.
      */
