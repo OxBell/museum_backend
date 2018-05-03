@@ -17,8 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Galleries Routes
 Route::get('galleries', 'GalleryController@index');
 Route::get('galleries/{gallery}', 'GalleryController@show');
 Route::post('galleries', 'GalleryController@store');
 Route::put('galleries/{gallery}', 'GalleryController@update');
 Route::delete('galleries/{gallery}', 'GalleryController@delete');
+
+// Photos Routes
+Route::get('photos', 'PhotoController@index');
+Route::get('photos/{photo}', 'PhotoController@show');
+Route::post('photos', 'PhotoController@store');
+Route::put('photos/{photo}', 'PhotoController@update');
+Route::delete('photos/{photo}', 'PhotoController@delete');
