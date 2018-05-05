@@ -9,6 +9,13 @@ class Gallery extends Model
 
     protected $fillable = ['name', 'description'];
 
+    protected $with = ['user', 'photos'];
+
+    public function path()
+    {
+        return '/api/galleries/' . $this->id;
+    }
+
     /**
      * Get the user for the gallery.
      */
