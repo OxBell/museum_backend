@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['gallery_id', 'user_id', 'name', 'description', 'srcUrl'];
 
     protected $with = ['owner'];
+
+    public function path()
+    {
+        return '/api/photos/' . $this->id;
+    }
 
     /**
      * Get the gallery for the photo.
@@ -26,4 +31,5 @@ class Photo extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
 }
