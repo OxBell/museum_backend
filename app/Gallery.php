@@ -9,7 +9,7 @@ class Gallery extends Model
 
     protected $fillable = ['name', 'description'];
 
-    protected $with = ['user', 'photos'];
+    protected $with = ['owner', 'photos'];
 
     public function path()
     {
@@ -19,9 +19,9 @@ class Gallery extends Model
     /**
      * Get the user for the gallery.
      */
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**

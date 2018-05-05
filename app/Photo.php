@@ -9,6 +9,8 @@ class Photo extends Model
 
     protected $fillable = ['name', 'description'];
 
+    protected $with = ['owner'];
+
     /**
      * Get the gallery for the photo.
      */
@@ -20,8 +22,8 @@ class Photo extends Model
     /**
      * Get the user for the photo.
      */
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
