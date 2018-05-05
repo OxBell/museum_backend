@@ -32,6 +32,7 @@ class ReadGalleriesTest extends TestCase
     /** @test */
     public function an_user_can_read_photos_associated_with_a_gallery()
     {
+        factory('App\Photo')->create(['gallery_id' => $this->gallery->id]);
         $response = json_decode(
             $this->get('/api/galleries/' . $this->gallery->id)
                 ->content()
