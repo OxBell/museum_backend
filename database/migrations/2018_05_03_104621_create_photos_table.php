@@ -19,7 +19,7 @@ class CreatePhotosTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name', 255);
             $table->string('description', 255);
-            $table->string('path');
+            $table->string('srcUrl');
             $table->timestamps();
 
             $table->foreign('user_id')

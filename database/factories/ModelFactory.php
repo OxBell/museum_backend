@@ -43,6 +43,6 @@ $factory->define(App\Photo::class, function($faker) {
         },
         'name' => $faker->word,
         'description' => $faker->text(255),
-        'path' => $faker->imageUrl(640, 480)
+        'srcUrl' => $faker->imageUrl(640, 480)
     ];
 });
